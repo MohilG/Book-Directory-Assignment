@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const books = require('./books.json');
+const books = require('./data.json');
 
 let bookIdCounter = books.length; 
 
@@ -36,15 +36,18 @@ router.put('/:id', (req, res) => {
   res.json({ message: `The book has been updated` });
 });
 
-router.delete('/delete/:id', (req, res) => {
-  const { id } = req.params;
+router.delete('/:id', (req, res) => {
+  try{const { id } = req.params;
   const index = books.findIndex((book) => book.id === parseInt(id));
   if (index !== -1) {
     books.splice(index, 1);
     res.json({ message: `Book has been deleted` });
   } else {
     res.status(404).json({ message: `Book not found` });
-  }
+  }}
+  catch(err){
+    console.log(err);
+    res.status(500).json(err)}
 });
 
 module.exports = router;
