@@ -1,0 +1,7 @@
+[
+  { "id": 1, "name": "To Kill a Mockingbird", "author": "Harper Lee" },
+  { "id": 2, "name": "Pride and Prejudice", "author": "Jane Austen" },
+  { "id": 3, "name": "The Great Gatsby", "author": "F. Scott Fitzgerald" },
+  { "id": 4, "name": "1984", "author": "George Orwell" },
+  { "id": 5, "name": "The Catcher in the Rye", "author": "J.D. Salinger" }
+]
